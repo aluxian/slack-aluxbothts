@@ -17,13 +17,13 @@ const lib = require('lib')({token: process.env.STDLIB_TOKEN});
 */
 module.exports = (user, channel, text = '', command = {}, botToken = null, callback) => {
   const facts = [
-    'Alex created me in about 2 hours',
-    'Alex bought a green squishy for himself',
-    'Alex is currently temporarily single',
-    'Alex drinks Huel',
-    'Alex has programmed in javascript, php, c, c++, python, scala, java, haskell, go, html, css, coffeescript, less, sass, ruby, c#, assembly, swift, obj-c, sql, matlab, bash, fish, awk, and cql (his own)',
-    'Alex\'s favourite alcoholic drink is Martini but Disaronno is a close second',
-    'Alex has a collection of stickers, but he hasn\'t counted how many yet',
+    'Alex created me in about 2 hours 🛠',
+    'Alex bought a green squishy for himself 🦖',
+    'Alex is currently temporarily single 😉',
+    'Alex drinks Huel 🥤',
+    'Alex has programmed in javascript, php, c, c++, python, scala, java, haskell, go, html, css, coffeescript, less, sass, ruby, c#, assembly, swift, obj-c, sql, matlab, bash, fish, awk, and cql (his own) 🙀',
+    'Alex\'s favourite alcoholic drink is Martini but Disaronno is a close second 🍸',
+    'Alex has a collection of stickers, but he hasn\'t counted how many yet ✉️🏷',
   ];
   const i = parseInt(text) || Math.floor(Math.random()*facts.length);
   const factText = facts[i];

@@ -18,7 +18,7 @@ const lib = require('lib')({token: process.env.STDLIB_TOKEN});
 module.exports = (user, channel, text = '', event = {}, botToken = null, callback) => {
 
   // Only send a response to certain messages
-  if (text.match(/hey|hello|hi|sup/i)) {
+  /*if (text.match(/hey|hello|hi|sup/i)) {
     callback(null, {
       text: `Hey there! <@${user}> said ${text}`,
       attachments: [
@@ -26,7 +26,7 @@ module.exports = (user, channel, text = '', event = {}, botToken = null, callbac
         // See https://api.slack.com/docs/message-attachments for more info.
       ]
     });
-  } else {
+  } else */{
     callback(null, {});
   }
 
