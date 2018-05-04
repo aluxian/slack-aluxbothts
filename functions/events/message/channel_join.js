@@ -15,7 +15,7 @@ const lib = require('lib')({token: process.env.STDLIB_TOKEN});
 module.exports = (user, channel, text = '', event = {}, botToken = null, callback) => {
 
   callback(null, {
-    text: `Hello <@${user}>, welcome to <#${channel}>! :relaxed: I am @aluxian's personal chatbot. If you need anything chat with him directly b/c I don't forward messages yet 🤨`
+//    text: `Hello <@${user}>, welcome to <#${channel}>! :relaxed: I am @aluxian's personal chatbot. If you need anything chat with him directly b/c I don't forward messages yet 🤨`
   });
 
 };
