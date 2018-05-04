@@ -1,4 +1,6 @@
 const lib = require('lib')({token: process.env.STDLIB_TOKEN});
+const request = require('request');
+
 
 /**
 * app_mention event
@@ -14,8 +16,32 @@ const lib = require('lib')({token: process.env.STDLIB_TOKEN});
 */
 module.exports = (user, channel, text = '', event = {}, botToken = null, callback) => {
 
-  callback(null, {
-    text: 'Sry I can\'t help with anything yet. Try `/alexfact`'
-  });
+  if (text.startsWith('<@UAJHG1D99>')) {
+    request({
+      method: 'POST',
+      url: 'https://api.dialogflow.com/v1/query?v=20150910',
+      json: true,
+      body: {
+        "lang": "en",
+        "query": text.replace('<@UAJHG1D99>', ''),
+        "sessionId": user
+      },
+      headers: {
+        'Authorization': 'Bearer 688560499af743f9868d45ca8315ad2e',
+      }
+    }, function(error, response, body) {
+      if (body && body.result && body.result.fulfillment && body.result.fulfillment.speech) {
+        callback(null, {
+          text: body.result.fulfillment.speech,
+        });
+      } else {
+        callback(null, {
+          text: "i can't access my brain, call Alex " + JSON.stringify({error,response,body})
+        });
+      }
+    });
+  } else {
+    callback(null, {});
+  }
 
 };

@@ -24,6 +24,7 @@ module.exports = (user, channel, text = '', command = {}, botToken = null, callb
     'Alex has programmed in javascript, php, c, c++, python, scala, java, haskell, go, html, css, coffeescript, less, sass, ruby, c#, assembly, swift, obj-c, sql, matlab, bash, fish, awk, and cql (his own) 🙀',
     'Alex\'s favourite alcoholic drink is Martini but Disaronno is a close second 🍸',
     'Alex has a collection of stickers, but he hasn\'t counted how many yet ✉️🏷',
+    'Yiannis (president of HackaSoton) has said that "[Alex is] a gift sent from God to make this hackathon awesome" 😘'
   ];
   const i = parseInt(text) || Math.floor(Math.random()*facts.length);
   const factText = facts[i];
